@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOVANDBOY</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff0066, #6600cc, #00cc99);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            /* Agar bisa menempatkan foto 2 di pojok bawah */
+        }
+        
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Foto Profil di atas */
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            /* Memberi jarak lebih sedikit antara foto profil dan teks */
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        /* Animasi bergerak gambar 2 dengan kecepatan lebih lambat dan jarak lebih pendek */
+        
+        @keyframes moveVertical {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(5px);
+            }
+            /* Mengurangi jarak pergerakan */
+            100% {
+                transform: translateY(0);
+            }
+        }
+        /* Foto 2 yang berada di pojok bawah kanan dengan ukuran 9:16 tanpa latar belakang */
+        
+        .profile-img-right {
+            width: 300px;
+            /* Ukuran lebar 9:16 */
+            height: 533px;
+            /* Ukuran tinggi 9:16 */
+            object-fit: cover;
+            animation: moveVertical 3s ease-in-out infinite;
+            position: absolute;
+            bottom: 10px;
+            /* Menempatkan foto di pojok bawah lebih dekat */
+            right: 10px;
+            /* Menempatkan foto di pojok kanan lebih dekat */
+        }
+        
+        .text-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 10px;
+            /* Menurunkan jarak sedikit lebih dekat */
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            /* Memperkecil ukuran teks */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            /* Memperkecil ukuran teks */
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 1rem;
+            /* Memperkecil ukuran teks */
+            line-height: 1.4;
+        }
+        
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transform: scale(1);
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        
+        .separator {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+            margin: 15px 0;
+            /* Mengurangi jarak separator */
+        }
+        /* Media Queries untuk tampilan responsif */
+        
+        @media (max-width: 768px) {
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .profile-img-right {
+                width: 250px;
+                height: 444px;
+                bottom: 10px;
+                right: 10px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .text-box {
+                padding: 15px;
+                margin-top: 10px;
+            }
+            .separator {
+                margin: 10px 0;
+            }
+        }
+        /* Media Query untuk tampilan lebih kecil, seperti HP */
+        
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            .profile-img-right {
+                width: 200px;
+                height: 355px;
+                bottom: 10px;
+                right: 10px;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            h2 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+            .text-box {
+                padding: 10px;
+                margin-top: 8px;
+            }
+            .separator {
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Foto Profil yang berada di atas -->
+        <img src="foto1.jpg" alt="Foto Profil" class="profile-img">
+        <!-- Teks di bawah foto profil -->
+        <div class="text-box">
+            <h1>__________Sovandboy__________</h1>
+            <p>DONASI DAN DUKUNG SOVANDBOY</p>
+
+            <div class="separator"></div>
+
+            <h2>IKUTI KAMI DI INSTAGRAM</h2>
+            <p>FOLLOW INSTAGRAM </p>
+            <a href="https://www.instagram.com/sovandboy/profilecard/?igsh=YTJtZzBycm96MGp6" class="button">Instagram</a>
+
+            <div class="separator"></div>
+
+            <h2>JOIN DISCORD</h2>
+            <p>komunitas Discord</p>
+            <a href="https://discord.gg/AUj37R4hCA" class="button">Discord</a>
+
+            <div class="separator"></div>
+
+            <!-- Tombol Donasi Saweria -->
+            <h2>DONASI SAWERIA</h2>
+            <p>Support Sovandboy</p>
+            <a href="https://saweria.co/Sovand" class="button">Donasi Saweria</a>
+        </div>
+    </div>
+
+    <!-- Foto 2 di pojok kanan bawah dengan ukuran 9:16 tanpa latar belakang -->
+    <img src="foto2.jpg" alt="Foto 2" class="profile-img-right">
+</body>
+
+</html>
